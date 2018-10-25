@@ -53,3 +53,40 @@ Swift 官方教程中这些说明：
     }
 ```
 
+### inout###
+
+对于 swift 中 `inout`关键字，我们通过实例来说明：
+
+* 普通方法，不使用 inout 关键字，系统给出异常
+
+```swift
+   var value: Int = 50
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print(value)
+        inoutTest(aValue: value)
+        print(value)
+    }
+    func inoutTest(aValue: Int) {
+        aValue = 10
+        // aborting: Cannot assign to value: 'aValue' is a 'let' constant
+    }
+```
+
+* 使用 inout 关键字来修饰参数
+
+```swift
+    var value: Int = 50
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print(value) // print result is 50
+        inoutTest(aValue: &value)
+        print(value) // print result is 10
+    }
+    func inoutTest(aValue: inout Int) {
+        aValue = 10
+    }
+```
+
