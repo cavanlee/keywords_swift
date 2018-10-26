@@ -123,3 +123,18 @@ func deferTest() {
 ```
 
 论起实际作用，比如说在函数块中做清尾工作，回收变量等，使用 defer 再好不过了。
+
+### @noescape###
+
+`@noescape`，这是一个从 Swift 1.2 引入的关键字，它是专门用于修饰函数闭包这种参数类型的，当出现这个参数时，它表示该闭包不会跳出这个函数调用的生命期：即函数调用完之后，这个闭包的生命期也结束了。
+
+```swift
+public func map<T>(@noescape transform: (Self.Generator.Element) throws -> T) rethrows -> [T]
+```
+
+以下是 Apple 官方文档原文：
+
+>A new @noescape attribute may be used on closure parameters to functions. This indicates that the parameter is only ever called (or passed as an @noescape parameter in a call), which means that it cannot outlive the lifetime of the call. This enables some minor performance optimizations, but more importantly disables the self. requirement in closure arguments.
+
+
+
