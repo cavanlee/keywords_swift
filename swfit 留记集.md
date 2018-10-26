@@ -90,3 +90,36 @@ Swift 官方教程中这些说明：
     }
 ```
 
+### defer###
+
+`defer`的作用简单来说，就是 defer block 里的代码会在函数 return 之前执行，无论函数是从哪个分支 return 的，还是有 throw，还是自然而然走到最后一行。
+
+```swift
+// 执行顺序：impossible-finally-handle error
+func deferTest() {
+        do {
+            defer {
+                print("finally")
+            }
+            print("impossible")
+            throw MyError.SampleError
+        } catch {
+            print("handle error")
+        }
+    }
+
+// 执行顺序：impossible-handle error-finally
+ func deferTest() {
+        defer {
+            print("finally")
+        }
+        do {
+            print("impossible")
+            throw MyError.SampleError
+        } catch {
+            print("handle error")
+        }
+    }
+```
+
+论起实际作用，比如说在函数块中做清尾工作，回收变量等，使用 defer 再好不过了。
