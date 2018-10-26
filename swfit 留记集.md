@@ -136,5 +136,7 @@ public func map<T>(@noescape transform: (Self.Generator.Element) throws -> T) re
 
 >A new @noescape attribute may be used on closure parameters to functions. This indicates that the parameter is only ever called (or passed as an @noescape parameter in a call), which means that it cannot outlive the lifetime of the call. This enables some minor performance optimizations, but more importantly disables the self. requirement in closure arguments.
 
+### rethrows/throws###
 
+[TODO](https://www.jianshu.com/p/802ff8969952)
 
