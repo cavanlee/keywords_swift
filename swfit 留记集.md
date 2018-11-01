@@ -140,3 +140,5 @@ public func map<T>(@noescape transform: (Self.Generator.Element) throws -> T) re
 
 [TODO](https://www.jianshu.com/p/802ff8969952)
 
+### typealias
+
