@@ -142,3 +142,7 @@ public func map<T>(@noescape transform: (Self.Generator.Element) throws -> T) re
 
 ### typealias
 
+### subscript
+
+
+
