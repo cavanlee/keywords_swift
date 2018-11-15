@@ -2,9 +2,11 @@
 
 Swift 是一门新的开发语言，用于开发 iOS，macOS，watchOS 和 tvOS App。虽然是一门新的开发语言，但是你会发现和之前所使用的 C 和 Objective-C 会有很多相似之处。
 
-
-
 对于 C 和 Objective-C 中存在的基本类型，例如`Int`对应`Intergers`,`Double、Float`对应浮点数，`Bool`对应`BOOL`，用`String`类型来处理文本数据。Swift 同样提供了分厂有用的集合类型，例如`Array、Set、Dictionary`。(关于集合，可以查阅[集合类型](https://www.baidu.com))
+
+和 C 语言类似，在 Swift 中使用不同的变量来存储值，并且广泛使用了值不可变的变量，这些不可变类型的变量称作常量。当有些值不需要修改的时候，可以使用常量来声明，这样能使代码更安全、更清晰。
+
+除了这些常用的类型，Swift 引入了在 Objective-C 中没有的类型，比如`tuples`(元祖)。`Tuples`可以允许你创建或者传递一组不同类型的集合，比如作为函数的返回值时，你可以用一个元组返回多个同类型或者不同类型的值。
 
 ### 断言（Assertions）和前置条件（Preconditions）
 
