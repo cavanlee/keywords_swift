@@ -8,6 +8,8 @@ Swift 是一门新的开发语言，用于开发 iOS，macOS，watchOS 和 tvOS 
 
 除了这些常用的类型，Swift 引入了在 Objective-C 中没有的类型，比如`tuples`(元祖)。`Tuples`可以允许你创建或者传递一组不同类型的集合，比如作为函数的返回值时，你可以用一个元组返回多个同类型或者不同类型的值。
 
+Swift 为了处理没有值的情况引入了可选类型的概念，所谓的可选类型，也就是说一个变量有可能值为 x，也有可能根本就没有值。这和 Objective-C 中使用空指针 nil 类似，唯一的区别就是 Swift 中可选类型适用范围为所有类型，而 Objective-C 中的空指针只适用于类对象。和 Objective-C 中的空指针 nil 相比，Swift 中的可选类型（`optionals`）表现的更出色，也更加的安全，也是 Swift 中核心功能之一。
+
 ### 断言（Assertions）和前置条件（Preconditions）
 
  Swift 中的断言和前置条件在运行时进行检查判断。 在某段将要执行的代码前
