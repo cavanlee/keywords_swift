@@ -10,7 +10,7 @@ Swift 是一门新的开发语言，用于开发 iOS，macOS，watchOS 和 tvOS 
 
 Swift 为了处理没有值的情况引入了可选类型的概念，所谓的可选类型，也就是说一个变量有可能值为 x，也有可能根本就没有值。这和 Objective-C 中使用空指针 nil 类似，唯一的区别就是 Swift 中可选类型适用范围为所有类型，而 Objective-C 中的空指针只适用于类对象。和 Objective-C 中的空指针 nil 相比，Swift 中的可选类型（`optionals`）表现的更出色，也更加的安全，也是 Swift 中核心功能之一。
 
-Swift 是一种强类型语言，编译器会协助你检查变量类型是否正确。
+Swift 是一种强类型语言，这意味着 Swift 可以让你清楚的知道值的类型。如果你的代码期望得到一个String，类型安全会阻止你不小心传入一个Int。同样的，如果你的代码期望得到一个String，类型安全会阻止你意外传入一个可选的String。类型安全可以帮助你在开发阶段尽早发现并修正错误。
 
 ### 断言（Assertions）和前置条件（Preconditions）
 
