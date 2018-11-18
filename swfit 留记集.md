@@ -1,4 +1,4 @@
-###@discardableResult###
+###@discardableResult
 
 ```swift
 @discardableResult
@@ -15,7 +15,7 @@ swift中所定义的函数如果有返回值的话,调用的时候必须有一�
 _ = discardTest()
 ```
 
-### mutating###
+### mutating
 
 `structure,enumeration,class`是 Swift 这门语言中的三种类型，其中`structure`和`enumeration`归属于值类型(`value type`)，而`class`是引用类型(`reference type`)。此处与 OC 不同的是，`structure`和`enumeration`是可以拥有方法的，种种方法可以为实例方法，也可以为类方法。
 
@@ -53,7 +53,7 @@ Swift 官方教程中这些说明：
     }
 ```
 
-### inout###
+### inout
 
 对于 swift 中 `inout`关键字，我们通过实例来说明：
 
@@ -90,7 +90,7 @@ Swift 官方教程中这些说明：
     }
 ```
 
-### defer###
+### defer
 
 `defer`的作用简单来说，就是 defer block 里的代码会在函数 return 之前执行，无论函数是从哪个分支 return 的，还是有 throw，还是自然而然走到最后一行。
 
@@ -124,7 +124,7 @@ func deferTest() {
 
 论起实际作用，比如说在函数块中做清尾工作，回收变量等，使用 defer 再好不过了。
 
-### @noescape###
+### @noescape
 
 `@noescape`，这是一个从 Swift 1.2 引入的关键字，它是专门用于修饰函数闭包这种参数类型的，当出现这个参数时，它表示该闭包不会跳出这个函数调用的生命期：即函数调用完之后，这个闭包的生命期也结束了。
 
@@ -136,13 +136,15 @@ public func map<T>(@noescape transform: (Self.Generator.Element) throws -> T) re
 
 >A new @noescape attribute may be used on closure parameters to functions. This indicates that the parameter is only ever called (or passed as an @noescape parameter in a call), which means that it cannot outlive the lifetime of the call. This enables some minor performance optimizations, but more importantly disables the self. requirement in closure arguments.
 
-### rethrows/throws###
+### rethrows/throws
 
 [TODO](https://www.jianshu.com/p/802ff8969952)
 
 ### typealias
 
 ### subscript
+
+### if case let
 
 
 

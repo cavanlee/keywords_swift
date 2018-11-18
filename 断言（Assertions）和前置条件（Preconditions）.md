@@ -77,6 +77,50 @@ let 🐶🐮 = "dogcow"
 
 常量和变量的命名不可以包含空格、数学符号、箭头、私有 Unicode 编码、连线和制表符，不可以以数字开头，但是可以在常量与变量名的其他地方包含数字。
 
+在声明某一类型的常量和变量的后，就不能再同一作用域内使用相同的名字进行重复定义，或者更改其类型，以及常量转换变量，变量转换常量都是不允许的。
+
+>注意：
+>
+>如果你要使用系统关键字作为常量或者变量名，那么你需要在该关键字前后加上"`",以此作为区分。但是在编码的过程中，始终不建议使用系统关键字来声明常量或者变量名。
+
+对于已经声明过的变量，我们可以重新赋予同类型新值。例如下面例子，变量`fridendlyWelcome`的值从`Hello!`变为`Bonjour!`。
+
+```swift
+var friendlyWelcome = "Hello!"
+friendlyWelcome = "Bonjour!"
+// friendlyWelcome is now "Bonjour!"
+```
+
+和变量不同的是，常量的值一旦初始化之后是不能更改的。如果你尝试修改一个常量的值，就会出现编译错误。
+
+```swift
+let languageName = "Swift"
+languageName = "Swift++"
+// This is a compile-time error: languageName cannot be changed.
+```
+
+#### 常量和变量的打印
+
+我们可以使用`print(_:separator:terminator:)`函数将常量或者变量输入到控制台。例如：
+
+```swift
+print(friendlyWelcome)
+// Prints "Bonjour!"
+```
+
+`print(_:separator:terminator:)`是一个全局的函数，print函数可以输出一个或多个值到适当输出区的全局函数。在 Xcode 中，print 函数可以将输出结果输出到 Xcode 的控制台面板。该函数中`sepatator`和`terminator`两个参数均有默认值，所以在我们使用该函数时，我们可以忽略这两个参数。默认情况下，该函数通过添加换行符来结束当前行。如果不想换行，可以传递一个空字符串给terminator参数。例如，`print(someValue, terminator:"")`。关于参数默认值的更多信息，请参考[默认参数值](https://www.baidu.com)。
+
+Swift 用*字符串插值（string interpolation）*的方式把常量名或者变量名当做占位符加入到长字符串中，Swift 会用当前常量或变量的值替换这些占位符。将常量或变量名放入圆括号中，并在开括号前使用反斜杠将其转义：
+
+```swift
+print("The current value of friendlyWelcome is \(friendlyWelcome)")
+// Prints "The current value of friendlyWelcome is Bonjour!"
+```
+
+>注意：
+>
+>字符串插值所有可用的选项，请参考[字符串插值](https://www.baidu.com)。
+
 ### 断言（Assertions）和前置条件（Preconditions）
 
  Swift 中的断言和前置条件在运行时进行检查判断。 在某段将要执行的代码前
