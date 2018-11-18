@@ -35,7 +35,7 @@ var currentLoginAttempt = 0
 var x = 0.0, y = 0.0, z = 0.0
 ```
 
->备注：
+>注意：
 >
 >Swift 中，如果一个被存储的值不会改变，始终建议你使用`let`关键字将其声明为一个常量。使用变量仅仅适用于被存储的值会发生变化的情况。
 
@@ -59,6 +59,20 @@ welcomeMessage = "Hello"
 
 ```swift
 var red, green, blue: Double
+```
+
+>注意：
+>
+>在编码的过程中，其实很少为变量指定类型。如果你为一个常量或变量进行了初始化，Swift 基本上可以根据初始值推断出该常量或变量的类型，详细的介绍可以在[类型安全和类型推断](https://www.baidu.com)章节中找到。在以上我们提供的举例中，`welcomeMessage`因为没有提供初始值，所以我们需要为变量`welcomeMessage`指定一个`String`类型。
+
+#### 常量和变量的命名规范
+
+常量和变量的命名几乎可以涵盖任何的字符，甚至可以使用 Unicode 字符来作为变量名。
+
+```swift
+let π = 3.14159
+let 你好 = "你好世界"
+let 🐶🐮 = "dogcow"
 ```
 
 
