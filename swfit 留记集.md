@@ -152,7 +152,46 @@ public func map<T>(@noescape transform: (Self.Generator.Element) throws -> T) re
 
 >注意：
 >
->结构体中不支持`Self`关键字。
+>结构体和枚举中不支持`Self`关键字。
+
+声明一个枚举，证明枚举类型也是值类型：
+
+```swift
+enum EnumA: Int {
+    case Monday
+    case Tuesday
+}
+
+extension EnumA {
+    func getEnum(a: Int) -> EnumA {
+        switch a {
+        case 1:
+            return .Monday
+        case 2:
+            return .Tuesday
+        default:
+            return self
+        }
+    }
+}
+
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+
+        let enumA: EnumA = .Tuesday
+        var enumB = enumA.getEnum(a: 0)
+    
+        print(enumA, enumB) // result: Tuesday Tuesday
+        
+        enumB = .Monday
+        print(enumA, enumB) // result: Tuesday Monday
+    }
+
+}
+```
 
 
 
