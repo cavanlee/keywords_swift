@@ -146,5 +146,13 @@ public func map<T>(@noescape transform: (Self.Generator.Element) throws -> T) re
 
 ### if case let
 
+### Self & self
+
+`Self`只表示特定类型，并且只能在协议或者类中作为函数的返回值，而`self`在实例方法中表示当前实例，在类方法中指代当前类。
+
+>注意：
+>
+>结构体中不支持`Self`关键字。
+
 
 
